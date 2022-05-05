@@ -6,7 +6,6 @@ jobs:
 - job: A
   strategy:
     parallel: # parallel strategy
-    matrix: # matrix strategy
     maxParallel: 2 # maximum number simultaneous matrix legs to run
   steps:
   - task: Npm@1
