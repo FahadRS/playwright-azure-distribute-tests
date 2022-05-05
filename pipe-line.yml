@@ -2,8 +2,25 @@ pool:
   name: Azure Pipelines
   demands: npm
 
-steps:
-- task: Npm@1
-  displayName: 'npm install'
-  inputs:
-    verbose: false
+jobs:
+- job: A
+  strategy:
+    parallel: # parallel strategy
+    matrix: # matrix strategy
+    maxParallel: 2 # maximum number simultaneous matrix legs to run
+  steps:
+  - task: Npm@1
+    displayName: 'npm install'
+    inputs:
+      verbose: false
+
+- job: B
+  strategy:
+    parallel: # parallel strategy
+    matrix: # matrix strategy
+    maxParallel: 2 # maximum number simultaneous matrix legs to run
+  steps:
+  - task: Npm@1
+    displayName: 'npm install'
+    inputs:
+      verbose: false
