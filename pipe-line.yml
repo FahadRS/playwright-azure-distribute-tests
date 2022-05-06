@@ -1,12 +1,13 @@
 pool:
   name: Azure Pipelines
-  demands: 
-    - Agent.os -equals windows
+  demands: npm
 
 jobs:
 - job: A
   strategy:
     maxParallel: 2 # maximum number simultaneous matrix legs to run
+  pool:
+    vmImage: 'vs2017-win2016'
   steps:
   - script: npm ci
   - script: npx playwright test --shard=1/2 
@@ -14,6 +15,8 @@ jobs:
 - job: B
   strategy:
     maxParallel: 2 # maximum number simultaneous matrix legs to run
+  pool:
+    vmImage: 'vs2017-win2016'
   steps:
   - script: npm ci
   - script: npx playwright test --shard=2/2 
