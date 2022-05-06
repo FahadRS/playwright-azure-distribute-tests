@@ -10,7 +10,7 @@ jobs:
   pool:
     vmImage: 'vs2017-win2016'
   steps:
-  - script: npm install
+  - script: npm install --force
   - script: npx playwright test --shard=1/2 
 
 - job: B
@@ -19,5 +19,5 @@ jobs:
   pool:
     vmImage: 'vs2017-win2016'
   steps:
-  - script: npm install
+  - script: npm install --force
   - script: npx playwright test --shard=2/2 
