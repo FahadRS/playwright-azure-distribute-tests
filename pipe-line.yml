@@ -9,10 +9,8 @@ jobs:
     matrix: # matrix strategy
     maxParallel: 2 # maximum number simultaneous matrix legs to run
   steps:
-  - task: Npm@1
-    displayName: 'npm install'
-    inputs:
-      verbose: false
+  - script: npm ci
+  - script: npx playwright test --shard=1/2 
 
 - job: B
   strategy:
@@ -20,7 +18,5 @@ jobs:
     matrix: # matrix strategy
     maxParallel: 2 # maximum number simultaneous matrix legs to run
   steps:
-  - task: Npm@1
-    displayName: 'npm install'
-    inputs:
-      verbose: false
+  - script: npm ci
+  - script: npx playwright test --shard=1/2 
