@@ -15,4 +15,4 @@ jobs:
     maxParallel: 2 # maximum number simultaneous matrix legs to run
   steps:
   - script: npm ci
-  - script: npx playwright test --shard=1/2 
+  - script: npx playwright test --shard=2/2 
