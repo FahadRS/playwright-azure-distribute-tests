@@ -20,4 +20,4 @@ jobs:
     vmImage: 'vs2017-win2016'
   steps:
   - script: npm install
-  - script: npx playwright test --shard=1/2 
+  - script: npx playwright test --shard=2/2 
