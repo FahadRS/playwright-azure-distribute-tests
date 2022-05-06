@@ -1,6 +1,7 @@
 pool:
   name: Azure Pipelines
-  demands: npm
+  demands: 
+    - Agent.os -equals windows
 
 jobs:
 - job: A
